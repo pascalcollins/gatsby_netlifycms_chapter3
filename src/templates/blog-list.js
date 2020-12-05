@@ -2,12 +2,13 @@ import React from 'react';
 import {graphql, Link} from 'gatsby';
 import BlogPost from '../components/BlogPost';
 import Layout from '../components/Layout';
-import styles from './blog-list.module.csss';
+import styles from './blog-list.module.css';
 
 export default function BlogListTemplate({data, pageContext}) {
     const previousPage = pageContext.currentPage === 2 ?
         '/blog':
-        `/blog/${pageContext.currentPage + 1}`;
+        `/blog/${pageContext.currentPage - 1}`;
+    const nextPage = `/blog/${pageContext.currentPage + 1}`;
 
     return (
         <Layout>

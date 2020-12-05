@@ -10,7 +10,7 @@ exports.onCreateNode = function({ node, getNode, actions}){
             node,
             name: 'slug',
             value: slug
-        })
+        });
     }
 };
 
@@ -24,6 +24,7 @@ exports.createPages = async function({ graphql, actions }) {
                     node {
                         fields {
                             slug
+                            contentKey
                         }
                     }
                 }
@@ -36,7 +37,8 @@ exports.createPages = async function({ graphql, actions }) {
             path: node.fields.slug,
             component: path.resolve('./src/templates/blog.js'),
             context: {
-                slug: node.fields.slug
+                slug: node.fields.slug,
+                contentKey: node.fields.contentKey
             }
         });
     });
