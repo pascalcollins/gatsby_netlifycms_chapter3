@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {graphql, useStaticQuery} from 'gatsby';
+import {Link, graphql, useStaticQuery} from 'gatsby';
 
 import BlogPost from './BlogPost';
 
@@ -39,6 +39,9 @@ export default function BlogList() {
                     excerpt={edge.node.excerpt}
                 />
             ))}
+            <div>
+                <Link to="/blog">More &gt;&gt;</Link>
+            </div>
         </div>
     );
 }
