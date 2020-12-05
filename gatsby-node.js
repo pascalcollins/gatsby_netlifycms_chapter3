@@ -40,4 +40,26 @@ exports.createPages = async function({ graphql, actions }) {
             }
         });
     });
+
+    const posts = result.data.allMarkdownRemark.edges;
+    const pageSize = 5;
+    const pageCount = Math.ceil(posts.length / pageSize);
+    const templatePath = path.resolve('src/templates/blog-list.js');
+    for (let i = 0; i < pageCount; i++) {
+        let path = '/blog';
+        if (i > 0) {
+            path += `/${i+1}`;
+        }
+        createPage({
+            path,
+            component: templatePath,
+            context: {
+                limit: pageSize,
+                skip: i * pageSize,
+                pageCount,
+                currentPage: i + 1
+            }
+        });
+    }
 };
+
