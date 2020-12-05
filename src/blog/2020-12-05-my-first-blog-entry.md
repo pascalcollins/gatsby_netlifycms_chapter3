@@ -4,14 +4,6 @@ date: 2020-12-05T07:13:16.361Z
 ---
 # Hello world!
 
-**Bold**
-
-*Italic*
-
-`Code`
-
-> Quote
-
-* Bullet point list
+This is my very first blog entry with **Netlify CMS** and **Gatsby**, following the chapters of the new book by Joe Attardi :)
 
 ![I have an image](/img/b5f49bd77695d920a8102b43e810b0bc.jpg "I have an image")
