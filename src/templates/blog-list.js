@@ -20,8 +20,8 @@ export default function BlogListTemplate({data, pageContext}) {
                     <BlogPost
                         key={node.node.id}
                         slug={node.node.fields.slug}
-                        title={node.node.frontMatter.title}
-                        date={node.node.frontMatter.date}
+                        title={node.node.frontmatter.title}
+                        date={node.node.frontmatter.date}
                         excerpt={node.node.excerpt} />
                 ))}
             </main>
