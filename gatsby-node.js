@@ -22,9 +22,11 @@ exports.createPages = async function({ graphql, actions }) {
             allMarkdownRemark {
                 edges {
                     node {
-                        fields {
-                            slug
+                        frontmatter {
                             contentKey
+                        }
+                        fields {
+                            slug                          
                         }
                     }
                 }
@@ -32,18 +34,17 @@ exports.createPages = async function({ graphql, actions }) {
         }
     `)
 
-    result.data.allMarkdownRemark.edges.forEach(({node}) => {
+    const posts = result.data.allMarkdownRemark.edges
+        .filter(edge => edge.node.frontmatter.contentKey === 'blog');
+    posts.forEach(({ node }) => {
         createPage({
             path: node.fields.slug,
             component: path.resolve('./src/templates/blog.js'),
             context: {
-                slug: node.fields.slug,
-                contentKey: node.fields.contentKey
+                slug: node.fields.slug
             }
         });
     });
-
-    const posts = result.data.allMarkdownRemark.edges;
     const pageSize = 5;
     const pageCount = Math.ceil(posts.length / pageSize);
     const templatePath = path.resolve('src/templates/blog-list.js');

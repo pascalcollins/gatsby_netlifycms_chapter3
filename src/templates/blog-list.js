@@ -22,7 +22,7 @@ export default function BlogListTemplate({data, pageContext}) {
                         slug={node.node.fields.slug}
                         title={node.node.frontMatter.title}
                         date={node.node.frontMatter.date}
-                        excerptt={node.node.excerpt} />
+                        excerpt={node.node.excerpt} />
                 ))}
             </main>
             <div id={styles.pageLinks}>
