@@ -1,7 +1,8 @@
 const path = require('path');
 const {createFilePath} = require('gatsby-source-filesystem'); // createFilePath creates a url from a file's path
-
+const {fmImagesToRelative} = require('gatsby-remark-relative-images');
 exports.onCreateNode = function({ node, getNode, actions}){
+    fmImagesToRelative(node);
     const {createNodeField} = actions; // actions hat mehrere Funktionen, die auf Nodes angewandt werden können. createNodeField erlaubt es einem Node weitere Felder hinzuzufügen
 
     if (node.internal.type === 'MarkdownRemark') {

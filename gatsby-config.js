@@ -7,6 +7,13 @@ module.exports = {
         {
             resolve: 'gatsby-source-filesystem',
             options: {
+                name: 'images',
+                path: 'static/img'
+            }
+        },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
                 name: 'blog',
                 path: 'src/blog'
             }
@@ -17,8 +24,17 @@ module.exports = {
                 name: 'pageData',
                 path: 'src/pageData'
             },
-
         },
+        {
+            resolve: 'gatsby-transformer-remark',
+            options: {
+                plugins: [
+                    'gatsby-remark-relative-images',
+                    'gatsby-remark-images'
+                ]
+            }
+        },
+        'gatsby-plugin-sharp',
         'gatsby-transformer-remark'
     ]
 }
