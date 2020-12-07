@@ -1,5 +1,6 @@
 ---
 title: Menu
+contentKey: menu
 categories:
   - name: Cookies
     items:
