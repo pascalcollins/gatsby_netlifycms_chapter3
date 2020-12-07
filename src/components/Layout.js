@@ -8,6 +8,8 @@ export default function Layout({ children }) {
       <header id={styles.header}>
         <div id={styles.inner}>
             <h1><Link to="/">Joe's Coffee </Link></h1>
+            <Link to="/blog">Blog</Link>
+            <Link to="/menu">Menu</Link>
         </div>
       </header>
       <main id={styles.main}>
