@@ -8,7 +8,7 @@ export default function Layout({ children }) {
     {
         file(relativePath: {eq: "coffee.jpg"}){
             childImageSharp {
-                fluid {
+                fluid(maxWidth: 1980) {
                     ...GatsbyImageSharpFluid
                 }
             }
