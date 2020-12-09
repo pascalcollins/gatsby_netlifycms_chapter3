@@ -1,6 +1,6 @@
 ---
-title: Menu
 contentKey: menu
+title: Menu
 categories:
   - name: Cookies
     items:
@@ -15,4 +15,9 @@ categories:
       - name: Schwarzwälder Kirchtorte
         description: Germany's favorite cake
         price: 3$
+  - name: new category in review
+    items:
+      - name: stuff
+        description: you know
+        price: 0$
 ---
