@@ -15,7 +15,7 @@ categories:
       - name: Schwarzwälder Kirchtorte
         description: Germany's favorite cake
         price: 3$
-  - name: new category
+  - name: new category in review
     items:
       - name: stuff
         description: you know
